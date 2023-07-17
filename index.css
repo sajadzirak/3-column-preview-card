@@ -1,2 +1,130 @@
-.attribution { font-size: 11px; text-align: center; }
-.attribution a { color: hsl(228, 45%, 44%); }
+/* Bright orange: hsl(31, 77%, 52%)
+Dark cyan: hsl(184, 100%, 22%)
+Very dark cyan: hsl(179, 100%, 13%)
+
+### Neutral
+
+Transparent white (paragraphs): hsla(0, 0%, 100%, 0.75)
+Very light gray (background, headings, buttons): hsl(0, 0%, 95%) */
+
+:root {
+    --Bright-orange: hsl(31, 77%, 52%);
+    --Dark-cyan: hsl(184, 100%, 22%);
+    --Very-dark-cyan: hsl(179, 100%, 13%);
+    --Transparent-white: hsla(0, 0%, 100%, 0.75);
+    --Very-light-gray: hsl(0, 0%, 95%)
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--Very-light-gray);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Lexend Deca', sans-serif;
+}
+
+.card {
+    overflow: hidden;
+    border-radius: 0.5rem;
+    margin: 15px;
+    display: flex;
+    flex-direction: column;
+    max-width: 375px;
+}
+
+.type:first-child {
+    background-color: var(--Bright-orange);
+}
+
+.type:nth-child(2) {
+    background-color: var(--Dark-cyan);
+}
+
+.type:nth-child(3) {
+    background-color: var(--Very-dark-cyan);
+}
+
+.type {
+    padding: 2.5rem;
+}
+
+.type h2 {
+    color: var(--Very-light-gray);
+    font-family: 'Big Shoulders Display', sans-serif;
+    font-weight: 700;
+    font-size: 2rem;
+    text-transform: uppercase;
+    margin: 1.4rem 0;
+}
+
+.type p {
+    color: var(--Transparent-white);
+    font-family: 'Lexend Deca', sans-serif;
+    font-size: 0.9rem;
+    line-height: 1.5rem;
+}
+
+.type button {
+    background-color: var(--Very-light-gray);
+    border: none;
+    border-radius: 2rem;
+    padding: 0.8rem 2rem;
+    font-family: 'Lexend Deca', sans-serif;
+    margin: 2rem 0 1rem 0;
+    font-size: 0.9rem;
+}
+
+.type:first-child button {
+    color: var(--Bright-orange);
+}
+
+.type:nth-child(2) button {
+    color: var(--Dark-cyan);
+}
+
+.type:nth-child(3) button {
+    color: var(--Very-dark-cyan);
+}
+
+.type button:hover {
+    cursor: pointer;
+    outline: 2px solid var(--Very-light-gray);
+    color: var(--Transparent-white);
+    background: transparent;
+}
+
+.attribution {
+    font-size: 11px; 
+    text-align: center; 
+    margin: 1rem 0;
+}
+
+.attribution a { 
+    color: hsl(228, 45%, 44%); 
+}
+
+@media screen and (min-width:768px) {
+    .card {
+        max-width: 750px;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .type button {
+        margin-top: 4rem;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .card {
+        max-width: 950px;
+    }
+}
